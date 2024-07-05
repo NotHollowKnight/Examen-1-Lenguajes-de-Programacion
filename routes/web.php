@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\directorioController;
+use App\Http\Controllers\contactosController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,4 +28,7 @@ Route::get('/directorio/verContactos/{codigoEntrada}',
 
 Route::get('/directorio/eliminar',
     [directorioController::class, 'eliminar'])->name('directorio.eliminar');
+
+Route::get('/contactos/añadir/{codigoEntrada}',
+    [contactosController::class, 'añadir'])->name('contacto.añadir');
 

@@ -40,44 +40,23 @@
                 <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="card">
-                            <h3 class="card-header">Lista de contactos</h3>
+                            <h3 class="card-header">Agregar Contacto</h3>
                             <div class="card-body">
                                 <p class="card-text">
-                                    <label for="">C&oacute;digo</label>
-                                    <input type="text" class="form-control" readonly>
-                                    <label for="">Nombre</label>
-                                    <input type="text" class="form-control" readonly>
-                                    <label for="">Apellido</label>
-                                    <input type="text" class="form-control" readonly>
-
-                                    <p>
-                                        <a href="{{route('contacto.añadir')}}" class="btn btn-primary">Agregar nuevo contacto</a>
-                                        <a href="{{route('directorio.mostrar')}}" class="btn btn-info">Regresar</a>
-                                    </p>
-
-                                    <table class="table">
-                                        <thead>
-                                            <th scope="col" name="nombre">Id</th>
-                                            <th scope="col" name="nombre">Nombre</th>
-                                            <th scope="col" name="tipoElectrodomestico">Apellido</th>
-                                            <th scope="col" name="precio">Tel&eacute;fono</th>
-                                            <th scope="col">Eliminar</th>
-                                        </thead>
-                                        <tbody>
-                                        @foreach ($contacto as $contactos)
-                                            @if ($contactos->codigoEntrada == $codigoEntrada)
-                                                <tr>
-                                                    <td>{{$contactos->id}}</td>
-                                                    <td>{{$contactos->nombre}}</td>
-                                                    <td>{{$contactos->apellido}}</td>
-                                                    <td>{{$contactos->telefono}}</td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-danger">Eliminar</a>
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                        @endforeach
-                                        </tbody>
+                                    <form>
+                                        <label for="">C&oacute;digo de entrada</label>
+                                        <input type="text" name="codigo" class="form-control" readonly>
+                                        <label for="">Nombre</label>
+                                        <input type="text" name="nombre" class="form-control">
+                                        <label for="">Apellido</label>
+                                        <input type="text" name="apellido" class="form-control">
+                                        <label for="">Tel&eacute;fono</label>
+                                        <input type="text" name="telefono" class="form-control">
+                                        
+                                        <button class="btn btn-primary">Guardar</button>
+                                        <a href="#" class="btn btn-info">Regresar</a>
+                                        
+                                    </form>
                                 </p>
                             </div>
                         </div>
