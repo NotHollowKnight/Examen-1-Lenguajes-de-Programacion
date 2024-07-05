@@ -44,14 +44,14 @@
                             <div class="card-body">
                                 <p class="card-text">
                                     <label for="">C&oacute;digo</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" value="{{$directorio->codigoEntrada}}" class="form-control" readonly>
                                     <label for="">Nombre</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" value="{{$directorio->nombre}}" class="form-control" readonly>
                                     <label for="">Apellido</label>
-                                    <input type="text" class="form-control" readonly>
+                                    <input type="text" value="{{$directorio->apellido}}" class="form-control" readonly>
 
                                     <p>
-                                        <a href="{{route('contacto.añadir')}}" class="btn btn-primary">Agregar nuevo contacto</a>
+                                        <a href="{{route('contacto.añadir', $directorio->codigoEntrada)}}" class="btn btn-primary">Agregar nuevo contacto</a>
                                         <a href="{{route('directorio.mostrar')}}" class="btn btn-info">Regresar</a>
                                     </p>
 
@@ -65,7 +65,7 @@
                                         </thead>
                                         <tbody>
                                         @foreach ($contacto as $contactos)
-                                            @if ($contactos->codigoEntrada == $codigoEntrada)
+                                            @if ($contactos->codigoEntrada == $directorio->codigoEntrada)
                                                 <tr>
                                                     <td>{{$contactos->id}}</td>
                                                     <td>{{$contactos->nombre}}</td>

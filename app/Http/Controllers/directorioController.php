@@ -46,8 +46,7 @@ class directorioController extends Controller
     public function verContactos($codigoEntrada){
         $directorio = Directorio::find($codigoEntrada);
         $contacto = Contacto::all();
-        return view('verContactos', compact('contacto', 'codigoEntrada'));
-        //return $directorio;
+        return view('verContactos', compact('contacto', 'directorio'));
     }
 
     public function eliminar(){
